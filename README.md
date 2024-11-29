@@ -27,8 +27,8 @@ Welcome to the **Student Management System** repository! This project is designe
 
 ## Screenshots
 
-![Home Page](assets/images/Home.png)
-![Contact Info](assets/images/Contact.png)
+![Home Page](assets/images/home.png)
+![Contact Info](assets/images/contact.png)
 
 
 ## Technologies Used
