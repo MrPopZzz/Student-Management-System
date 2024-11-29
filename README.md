@@ -28,10 +28,10 @@ Welcome to the **Student Management System** repository! This project is designe
 ## Screenshots
 
 ![Home Page](assets/images/Home.png)  
-*Sample view of the student dashboard.*
+*Sample view of the home page.*
 
 ![Contact Info](assets/images/Contact.png)  
-*Sample view of the teacher profile page.*
+*Sample view of the contact page.*
 
 ## Technologies Used
 
