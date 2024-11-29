@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Dashboard</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap">
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link rel="icon" href="assets/images/surtech.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="JIS-logo">
+            </div>
+            <ul class="nav-links">
+                <!-- <li><a href="teacher-dashboard.html">Dashboard</a></li> -->
+                <li><a href="attendance.html">Manage Attendance</a></li>
+                <li><a href="upload-materials.html">Upload Materials</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="login.html">Logout</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section class="welcome">
+            <h2>Welcome, <span id="teacher-name">[Teacher Name]</span>!</h2>
+            <p>Manage your classes and materials effortlessly.</p>
+        </section>
+        <section class="quick-links">
+            <h3>Quick Links</h3>
+            <div class="cards">
+                <a href="attendance.html" class="card">Manage Attendance</a>
+                <a href="upload-materials.html" class="card">View Materials</a>
+                <a href="profile.html" class="card">View Profile</a>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 SurTech. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="assets/js/teacher-dashboard.js"></script>
+</body>
+</html>

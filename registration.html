@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Student Management System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+    <link rel="stylesheet" href="assets/css/register.css">
+    <link rel="icon" href="assets/images/surtech.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="JIS-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown-nav">
+                    <a href="#">Courses</a>
+                    <div class="dropdown">
+                        <a href="student-details.html">Student</a>
+                        <a href="teacher-details.html">Teacher</a>
+                    </div>
+                </li>
+                <li class="dropdown-nav">
+                    <a href="#">Academics</a>
+                    <div class="dropdown">
+                        <a href="routine.html">Routine</a>
+                        <a href="academic-materials.html">Materials</a>
+                        <a href="course-details.html">Course</a>
+                    </div>
+                </li>
+                <li><a href="login.html">Login</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="registration-section">
+            <div class="registration-container">
+                <h2>Register Your Account</h2>
+                <div class="role-selection" id="role-selection">
+                    <button class="role-btn" id="student-btn">Register as Student</button>
+                    <button class="role-btn" id="teacher-btn">Register as Teacher</button>
+                </div>
+                
+                <!-- Student Registration Form -->
+                <form action="#" method="POST" class="registration-form" id="student-form">
+                    <h3>Student Registration</h3>
+                    <div class="input-group">
+                        <label for="student-name">Full Name</label>
+                        <input type="text" id="student-name" name="student-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-email">Email</label>
+                        <input type="email" id="student-email" name="student-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-password">Password</label>
+                        <input type="password" id="student-password" name="student-password" placeholder="Create a password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-session">Session</label>
+                        <input type="session" id="student-session" name="student-session" placeholder="Enter your session" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-type">Type</label>
+                        <input type="type" id="student-type" name="student-type" placeholder="Full Time / Part Time" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-roll">Roll Number</label>
+                        <input type="roll" id="student-roll" name="student-roll" placeholder="Enter your Roll Number" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-department">Department</label>
+                        <input type="department" id="student-department" name="student-department" placeholder="Enter your department" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="student-id">Student ID</label>
+                        <input type="text" id="student-id" name="student-id" placeholder="Enter your student ID" required>
+                    </div>
+                    <button type="submit" class="btn">Register as Student</button>
+                </form>
+
+                <!-- Teacher Registration Form -->
+                <form action="#" method="POST" class="registration-form" id="teacher-form">
+                    <h3>Teacher Registration</h3>
+                    <div class="input-group">
+                        <label for="teacher-name">Full Name</label>
+                        <input type="text" id="teacher-name" name="teacher-name" placeholder="Enter your full name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="teacher-email">Email</label>
+                        <input type="email" id="teacher-email" name="teacher-email" placeholder="Enter your email" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="teacher-password">Password</label>
+                        <input type="password" id="teacher-password" name="teacher-password" placeholder="Create a password" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="teacher-department">Department</label>
+                        <input type="department" id="teacher-department" name="teacher-department" placeholder="Enter your department" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="teacher-id">Teacher ID</label>
+                        <input type="id" id="teacher-id" name="teacher-id" placeholder="Enter your teacher ID" required>
+                    </div>
+                    <button type="submit" class="btn">Register as Teacher</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SurTech. All rights reserved.</p>
+    </footer>
+
+    <!-- JavaScript to toggle forms -->
+    <script>
+        document.getElementById('student-btn').addEventListener('click', function() {
+            document.getElementById('student-form').style.display = 'block';
+            document.getElementById('teacher-form').style.display = 'none';
+            document.getElementById('role-selection').style.display = 'none';
+        });
+
+        document.getElementById('teacher-btn').addEventListener('click', function() {
+            document.getElementById('teacher-form').style.display = 'block';
+            document.getElementById('student-form').style.display = 'none';
+            document.getElementById('role-selection').style.display = 'none';
+        });
+    </script>
+
+    <!-- <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/11.0.2/firebase-auth.js"></script> -->
+    <script type="module" src="assets/js/auth.js"></script>
+    <!-- <script src="assets/js/auth.js"></script> -->
+</body>
+</html>

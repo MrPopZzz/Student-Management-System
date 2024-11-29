@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Details - Student Management System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+    <link rel="stylesheet" href="assets/css/add.css">
+    <link rel="icon" href="assets/images/surtech.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="SurTech-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown-nav">
+                    <a href="#">Courses</a>
+                    <div class="dropdown">
+                        <a href="student-details.html">Student</a>
+                        <a href="teacher-details.html">Teacher</a>
+                    </div>
+                </li>
+                <li class="dropdown-nav">
+                    <a href="#">Academics</a>
+                    <div class="dropdown">
+                        <a href="routine.html">Routine</a>
+                        <a href="academic-materials.html">Materials</a>
+                        <a href="course-details.html">Course</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="details-section">
+            <div class="details-container">
+                <h2>Teacher Details</h2>
+                <form action="#" method="POST" class="details-form">
+                    <div class="input-group">
+                        <label for="teacher-id">Teacher ID</label>
+                        <input type="text" id="teacher-id" name="teacher-id" value="T12345" disabled>
+                    </div>
+                    <div class="input-group">
+                        <label for="teacher-name">Full Name</label>
+                        <input type="text" id="teacher-name" name="teacher-name" value="Dr. Emily Smith" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="teacher-email">Email</label>
+                        <input type="email" id="teacher-email" name="teacher-email" value="emily.smith@example.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="teacher-phone">Phone</label>
+                        <input type="text" id="teacher-phone" name="teacher-phone" value="+911234567899" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="teacher-address">Address</label>
+                        <input type="text" id="teacher-address" name="teacher-address" value="123 Rabindra Sarani, Kolkata" required>
+                    </div>
+                    <button type="submit" class="btn">Update Details</button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SurTech. All rights reserved.</p>
+    </footer>
+</body>
+</html>

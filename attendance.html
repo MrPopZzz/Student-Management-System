@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Records - Student Management System</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap">
+    <link rel="stylesheet" href="assets/css/attendance.css">
+    <link rel="icon" href="assets/images/surtech.png">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">
+                <img src="assets/images/logo.png" alt="JIS-logo">
+            </div>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown-nav">
+                    <a href="">Courses</a>
+                    <div class="dropdown">
+                        <a href="student-details.html">Student</a>
+                        <a href="teacher-details.html">Teacher</a>
+                    </div>
+                </li>
+                <li class="dropdown-nav">
+                    <a href="">Academics</a>
+                    <div class="dropdown">
+                        <a href="routine.html">Routine</a>
+                        <a href="academic-materials.html">Materials</a>
+                        <a href="course-details.html">Course</a>
+                    </div>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="attendance-section">
+            <div class="attendance-container">
+                <h2>Attendance Records</h2>
+
+                <!-- Form to Add New Attendance -->
+                <form id="attendance-form">
+                    <label for="studentName">Student Name:</label>
+                    <input type="text" id="studentName" name="studentName" required>
+
+                    <label for="studentId">Student ID:</label>
+                    <input type="text" id="studentId" name="studentId" required>
+
+                    <label for="date">Date:</label>
+                    <input type="date" id="date" name="date" required>
+
+                    <label for="status">Status:</label>
+                    <select id="status" name="status" required>
+                        <option value="Present">Present</option>
+                        <option value="Absent">Absent</option>
+                    </select>
+
+                    <button type="submit">Add Attendance</button>
+                </form>
+
+                <!-- Table to Display Attendance Records -->
+                <table class="attendance-table">
+                    <thead>
+                        <tr>
+                            <th>Student Name</th>
+                            <th>Student ID</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Data will be populated here dynamically -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 SurTech. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="assets/js/attendance.js"></script>
+</body>
+</html>

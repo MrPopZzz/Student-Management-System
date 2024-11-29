@@ -1,0 +1,305 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body and Background */
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensure the body takes full height of the viewport */
+}
+
+/* Main content area */
+.main-content {
+    flex: 1; /* This will ensure the content area takes up all available space */
+}
+
+/* Header and Navigation */
+header {
+    color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    background: linear-gradient(to right, #6a89cc, #82ccdd);
+
+}
+
+header nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo img {
+    width: 100%;
+    max-width: 80px;
+    height: auto;
+    object-fit: contain;
+}
+
+.nav-links {
+    list-style-type: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin: 0 15px;
+    position: relative;
+}
+
+.nav-links a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 10px 15px;
+    background-color: #ffffff;
+    border: 2px solid #8faec4;
+    border-radius: 5px;
+    transition: background 0.3s, color 0.3s, border-color 0.3s;
+}
+
+.nav-links li:hover .dropdown {
+    display: block;
+}
+
+.nav-links a:hover,
+.nav-links .active {
+    background-color: #8faec4;
+    color: #ffffff;
+    border-color: #6f94a5;
+}
+
+/* Dropdown menu */
+.dropdown {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #ffffff;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 8px;
+    padding: 5px 0;
+}
+
+/* Dropdown item links */
+.dropdown a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    background-color: #ffffff;
+    text-decoration: none;
+    border: none;
+    transition: background-color 0.3s;
+}
+
+.dropdown a:hover {
+    background-color: #8faec4;
+    color: #ffffff;
+}
+
+/* Profile Page */
+.profile-page {
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+    background-color: #f4f4f4;
+}
+
+.profile-container {
+    background-color: #ffffff;
+    padding: 30px;
+    width: 100%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.profile-header {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.profile-header h2 {
+    font-size: 2rem;
+    color: #34495e;
+}
+
+.profile-header p {
+    font-size: 1.1rem;
+    color: #8faec4;
+}
+
+/* Profile Details */
+.profile-details {
+    font-size: 1.1rem;
+    margin-bottom: 20px;
+}
+
+.profile-details p {
+    margin-bottom: 10px;
+}
+
+.profile-details strong {
+    color: #34495e;
+}
+
+.profile-details span {
+    color: #8faec4;
+}
+
+/* Profile Edit Button */
+.profile-edit-btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background-color: #3498db;
+    color: #ffffff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1rem;
+    text-align: center;
+    margin-top: 20px;
+    transition: background-color 0.3s;
+}
+
+.profile-edit-btn:hover {
+    background-color: #2980b9;
+}
+
+/* Footer */
+footer {
+    background-color: #34495e;
+    color: #ffffff;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: auto; /* This ensures the footer stays at the bottom */
+    font-size: 0.9rem;
+}
+
+
+/* General Responsive Media Query */
+@media screen and (max-width: 1200px) {
+    /* Adjust layout for large tablets or smaller screens */
+    .container, .content, .wrapper {
+        padding: 15px;
+    }
+
+    /* Make navigation links stack on top of each other */
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Adjust font sizes */
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .announcements h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    /* Adjust for smaller tablets and larger smartphones */
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+
+    .hero {
+        padding: 60px 10px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .announcements {
+        padding: 30px 10px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 15px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Mobile devices */
+    body {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 50px 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .nav-links li {
+        margin: 8px 0;
+    }
+
+    .announcements {
+        padding: 20px 10px;
+    }
+
+    footer {
+        font-size: 0.7rem;
+        padding: 10px 0;
+    }
+
+    /* Mobile navigation */
+    .mobile-nav {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-menu span {
+        width: 30px;
+        height: 4px;
+    }
+}

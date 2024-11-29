@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Teacher List - Student Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/details.css" />
+    <link rel="icon" href="assets/images/surtech.png" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="assets/images/logo.png" alt="SurTech-logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown-nav">
+            <a href="#">Courses</a>
+            <div class="dropdown">
+              <a href="student-details.html">Student</a>
+              <a href="teacher-details.html">Teacher</a>
+            </div>
+          </li>
+          <li class="dropdown-nav">
+            <a href="#">Academics</a>
+            <div class="dropdown">
+              <a href="routine.html">Routine</a>
+              <a href="academic-materials.html">Materials</a>
+              <a href="course-details.html">Course</a>
+            </div>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="teacher-list-section">
+        <div class="teacher-list-container">
+          <h2>Teacher List</h2>
+
+          <!-- Teacher Table -->
+          <table>
+            <thead>
+              <tr>
+                <th>Logo</th>
+                <th>Name</th>
+                <th>Type</th>
+                <th>Employee ID</th>
+                <th>Department</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody id="teacher-table">
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/teacher.jpg"
+                    alt="Teacher Logo"
+                    class="teacher-logo"
+                  />
+                </td>
+                <td>Dr. Shefalika Ghosh Samaddar</td>
+                <td>Full-Time</td>
+                <td>2022-001</td>
+                <td>Cloud Computing</td>
+                <td>shefalikasamaddar@gmail.com</td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/teacher.jpg"
+                    alt="Teacher Logo"
+                    class="teacher-logo"
+                  />
+                </td>
+                <td>Debdatta Chatterjee</td>
+                <td>Part-Time</td>
+                <td>2021-002</td>
+                <td>Cyber Security</td>
+                <td>chatterjeedebdatta@gmail.com</td>
+              </tr>
+              <!-- More teachers can be added here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 SurTech. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="assets/js/auth.js"></script>
+    <script type="module" src="assets/js/storeData.js"></script>
+    <script type="module">
+      import {
+        getDocs,
+        collection,
+      } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+      import { db } from "./auth.js"; // Ensure you import db from auth.js
+
+      async function getTeachers() {
+        try {
+          const teachersRef = collection(db, "teachers"); // Reference to the 'teachers' collection
+          const querySnapshot = await getDocs(teachersRef);
+
+          querySnapshot.forEach((doc) => {
+            const teacher = doc.data();
+
+            const teacherRow = `
+                <tr data-employee-id="${teacher.employeeId}">
+                    <td><img src="assets/images/teacher.jpg" alt="Teacher Logo" class="teacher-logo"></td>
+                    <td>${teacher.name}</td>
+                    <td>${teacher.type}</td>
+                    <td>${teacher.employeeId}</td>
+                    <td>${teacher.department}</td>
+                    <td>${teacher.email}</td>
+                </tr>
+              `;
+
+            document.querySelector("#teacher-table").innerHTML += teacherRow;
+          });
+        } catch (error) {
+          console.error("Error fetching teacher data:", error);
+        }
+      }
+
+      // Call the function to populate the teacher list when the page loads
+      getTeachers();
+    </script>
+  </body>
+</html>

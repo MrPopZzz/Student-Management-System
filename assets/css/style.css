@@ -1,0 +1,199 @@
+/* Reset */
+body, h1, h2, p, ul, a {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    list-style: none;
+    color: inherit;
+    font-family: Arial, sans-serif;
+}
+
+/* General */
+body {
+    line-height: 1.6;
+    background-color: #f4f4f4;
+}
+
+header {
+    background: #333;
+    color: #fff;
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 1rem;
+}
+
+.nav-links a {
+    color: #fff;
+    padding: 0.5rem;
+    border-radius: 4px;
+}
+
+.nav-links a.active, .nav-links a:hover {
+    background: #575757;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: #0077b6;
+    color: #fff;
+}
+
+.hero h2 {
+    font-size: 2.5rem;
+}
+
+.hero p {
+    margin: 1rem 0;
+}
+
+.hero .btn {
+    display: inline-block;
+    background: #fff;
+    color: #0077b6;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+.quick-access {
+    padding: 40px 20px;
+    background-color: #f4f4f4;
+    text-align: center;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background: #333;
+    color: #fff;
+}
+
+
+/* General Responsive Media Query */
+@media screen and (max-width: 1200px) {
+    /* Adjust layout for large tablets or smaller screens */
+    .container, .content, .wrapper {
+        padding: 15px;
+    }
+
+    /* Make navigation links stack on top of each other */
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        display: block;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        margin: 10px 0;
+    }
+
+    /* Adjust font sizes */
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .announcements h2 {
+        font-size: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 830px) {
+    /* Adjust for smaller tablets and larger smartphones */
+    header nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px 0;
+    }
+
+    .hero {
+        padding: 60px 10px;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .announcements {
+        padding: 30px 10px;
+    }
+
+    footer {
+        font-size: 0.8rem;
+        padding: 15px 0;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    /* Mobile devices */
+    body {
+        font-size: 14px;
+    }
+
+    .hero {
+        padding: 50px 10px;
+    }
+
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .hero p {
+        font-size: 0.9rem;
+    }
+
+    .nav-links li {
+        margin: 8px 0;
+    }
+
+    .announcements {
+        padding: 20px 10px;
+    }
+
+    footer {
+        font-size: 0.7rem;
+        padding: 10px 0;
+    }
+
+    /* Mobile navigation */
+    .mobile-nav {
+        display: block;
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .hamburger-menu {
+        display: block;
+    }
+
+    .hamburger-menu span {
+        width: 30px;
+        height: 4px;
+    }
+}

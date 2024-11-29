@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student List - Student Management System</title>
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/details.css" />
+    <link rel="icon" href="assets/images/surtech.png" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <img src="assets/images/logo.png" alt="SurTech-logo" />
+        </div>
+        <ul class="nav-links">
+          <li><a href="home.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li class="dropdown-nav">
+            <a href="#">Courses</a>
+            <div class="dropdown">
+              <a href="student-details.html">Student</a>
+              <a href="teacher-details.html">Teacher</a>
+            </div>
+          </li>
+          <li class="dropdown-nav">
+            <a href="#">Academics</a>
+            <div class="dropdown">
+              <a href="routine.html">Routine</a>
+              <a href="academic-materials.html">Materials</a>
+              <a href="course-details.html">Course</a>
+            </div>
+          </li>
+          <li><a href="contact.html">Contact Us</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section class="student-list-section">
+        <div class="student-list-container">
+          <h2>Student List</h2>
+
+          <!-- Student Table -->
+          <table>
+            <thead>
+              <tr>
+                <th>Logo</th>
+                <th>Name</th>
+                <th>Session</th>
+                <th>Type</th>
+                <th>Roll Number</th>
+                <th>Department</th>
+                <th>Email</th>
+              </tr>
+            </thead>
+            <tbody id="student-table">
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/student.jpg"
+                    alt="Student Logo"
+                    class="student-logo"
+                  />
+                </td>
+                <td>Sayan Chakraborty</td>
+                <td>2019-2023</td>
+                <td>Full-Time</td>
+                <td>25500119006</td>
+                <td>Computer Science</td>
+                <td>chakrabortysayan.36.sc@gmail.com</td>
+              </tr>
+              <tr>
+                <td>
+                  <img
+                    src="assets/images/student.jpg"
+                    alt="Student Logo"
+                    class="student-logo"
+                  />
+                </td>
+                <td>Riya Chatterjee</td>
+                <td>2020-2024</td>
+                <td>Part-Time</td>
+                <td>300123312764</td>
+                <td>Electrical Engineering</td>
+                <td>riyachatterjee@gmail.com</td>
+              </tr>
+              <!-- More students can be added here -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <p>&copy; 2024 SurTech. All rights reserved.</p>
+    </footer>
+
+    <script type="module" src="assets/js/auth.js"></script>
+    <script type="module" src="assets/js/storeData.js"></script>
+    <script type="module">
+      import {
+        getDocs,
+        collection,
+      } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
+      import { db } from "./auth.js"; // Ensure you export db properly from auth.js
+
+      async function getStudents() {
+        const studentTable = document.querySelector("#student-table");
+
+        try {
+          const studentsRef = collection(db, "students"); // Reference to students collection
+          const querySnapshot = await getDocs(studentsRef); // Fetch documents
+
+          if (querySnapshot.empty) {
+            studentTable.innerHTML = `<tr><td colspan="7">No students found</td></tr>`;
+            return;
+          }
+
+          querySnapshot.forEach((doc) => {
+            const student = doc.data();
+
+            const studentRow = `
+        <tr data-roll-number="${student.rollNumber}">
+          <td><img src="assets/images/student.jpg" alt="Student Logo" class="student-logo"></td>
+          <td>${student.name}</td>
+          <td>${student.session}</td>
+          <td>${student.type}</td>
+          <td>${student.rollNumber}</td>
+          <td>${student.department}</td>
+          <td>${student.email}</td>
+        </tr>
+      `;
+
+            studentTable.insertAdjacentHTML("beforeend", studentRow);
+          });
+        } catch (error) {
+          console.error("Error getting student data:", error);
+          studentTable.innerHTML = `<tr><td colspan="7">Error loading student data</td></tr>`;
+        }
+      }
+
+      // Call the function on page load
+      getStudents();
+    </script>
+  </body>
+</html>
