@@ -18,14 +18,14 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
-const db = getFirestore(app); // Initialize Firestore
+const db = getFirestore(app); 
 
 
 
-// Assuming user is logged in
+
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        console.log('User logged in:', user); // Log user details
+        console.log('User logged in:', user); 
         displayTeacherInfo(user);
     } else {
         console.log('No user logged in');
@@ -34,16 +34,16 @@ onAuthStateChanged(auth, (user) => {
 });
 
 function displayTeacherInfo(user) {
-    // Use the `userId` from Firebase Authentication to search in Firestore
+    
     const teacherRef = collection(db, "teachers");
     const q = query(teacherRef, where("userId", "==", user.uid));
 
-    // Get the document where the userId matches the Firebase uid
+   
     getDocs(q).then((querySnapshot) => {
         if (!querySnapshot.empty) {
             const teacherData = querySnapshot.docs[0].data();
             console.log('Teacher data:', teacherData);
-            document.getElementById("teacher-name").textContent = teacherData.name; // Display teacher name
+            document.getElementById("teacher-name").textContent = teacherData.name; 
         } else {
             console.log("No teacher data found!");
         }

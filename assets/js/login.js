@@ -35,7 +35,7 @@ document.querySelector('.login-form')?.addEventListener('submit', async (e) => {
 
         console.log('User logged in:', user.uid); // Debugging: Log the user UID
 
-        // Query the Firestore collections to find the user based on their UID
+        
         const studentsQuery = query(collection(db, "students"), where("userId", "==", user.uid));
         const teachersQuery = query(collection(db, "teachers"), where("userId", "==", user.uid));
 
@@ -45,32 +45,32 @@ document.querySelector('.login-form')?.addEventListener('submit', async (e) => {
         if (!studentSnapshot.empty) {
             console.log('Student record found:', studentSnapshot.docs[0].data()); // Debugging
             alert('Login successful! Redirecting to Student Dashboard.');
-            window.location.href = "student-dashboard.html"; // Student dashboard redirection
+            window.location.href = "student-dashboard.html"; 
         } else if (!teacherSnapshot.empty) {
             console.log('Teacher record found:', teacherSnapshot.docs[0].data()); // Debugging
             const teacherDoc = teacherSnapshot.docs[0];
             const teacherData = teacherDoc.data();
 
-            // Fetch current status of the teacher from Firestore (if it exists)
-            const status = teacherData.status || "No status set"; // Default if no status exists
+            
+            const status = teacherData.status || "No status set"; 
 
             alert('Login successful! Redirecting to Teacher Dashboard.');
-            window.location.href = "teacher-dashboard.html"; // Teacher dashboard redirection
+            window.location.href = "teacher-dashboard.html"; 
 
-            // Assuming you want to allow the teacher to update their status directly from the dashboard
-            document.getElementById('teacher-status').innerText = status; // Display current status
+            
+            document.getElementById('teacher-status').innerText = status; 
 
             // Handle status update
             document.getElementById('update-status-btn').addEventListener('click', async () => {
                 const newStatus = document.getElementById('teacher-status-input').value;
                 if (newStatus) {
                     try {
-                        // Update status in Firestore
+                        
                         await updateDoc(doc(db, "teachers", teacherDoc.id), {
                             status: newStatus
                         });
 
-                        // Reflect the updated status in the UI
+                        
                         document.getElementById('teacher-status').innerText = newStatus;
                         alert('Status updated successfully!');
                     } catch (error) {

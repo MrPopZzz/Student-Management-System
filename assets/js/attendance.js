@@ -1,8 +1,8 @@
-// Import Firebase modules
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-app.js";
 import { getFirestore, collection, addDoc, query, getDocs } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
 
-// Firebase configuration
+
 const firebaseConfig = {
     apiKey: "AIzaSyBD06Se9M-6fndS_ew48BvFdha4ZIYpfS8",
     authDomain: "student-management-syste-ebbcb.firebaseapp.com",
@@ -14,20 +14,20 @@ const firebaseConfig = {
     databaseURL: "https://student-management-syste-ebbcb-default-rtdb.firebaseio.com/"
 };
 
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-const db = getFirestore(app); // Initialize Firestore
 
-// Reference to the attendance collection in Firestore
+const app = initializeApp(firebaseConfig);
+const db = getFirestore(app); 
+
+
 const attendanceRef = collection(db, "attendance");
 
-// Get the table body element where we will add rows
+
 const attendanceTableBody = document.querySelector('.attendance-table tbody');
 
-// Function to fetch and display attendance data from Firestore
+
 async function loadAttendance() {
     const querySnapshot = await getDocs(attendanceRef);
-    attendanceTableBody.innerHTML = ""; // Clear the table before adding data
+    attendanceTableBody.innerHTML = ""; 
 
     querySnapshot.forEach((doc) => {
         const data = doc.data();
@@ -61,11 +61,11 @@ form.addEventListener('submit', async (e) => {
             status
         });
 
-        // After adding, reload the table to show the new record
+        
         loadAttendance();
         alert("Attendance added successfully!");
 
-        // Reset the form
+        
         form.reset();
     } catch (error) {
         console.error("Error adding document: ", error);
@@ -73,5 +73,5 @@ form.addEventListener('submit', async (e) => {
     }
 });
 
-// Call the function to load attendance data when the page is loaded
+
 loadAttendance();

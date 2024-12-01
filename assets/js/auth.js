@@ -20,59 +20,6 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 const db = getFirestore(app);
 
-// Registration for Students
-// document.querySelector('#student-form')?.addEventListener('submit', (e) => {
-//     e.preventDefault(); // Prevent form submission refresh
-
-//     // Retrieve user inputs
-//     const email = document.getElementById('student-email').value;
-//     const password = document.getElementById('student-password').value;
-
-//     // Register user with Firebase Authentication
-//     createUserWithEmailAndPassword(auth, email, password)
-//         .then((userCredential) => {
-//             // User is successfully registered
-//             const user = userCredential.user;
-//             alert('Student registration successful!');
-
-//             // Redirect or additional actions
-//             window.location.href = "login.html"; // Example redirection
-//         })
-//         .catch((error) => {
-//             // Handle registration errors
-//             console.error('Error registering student:', error);
-//             alert('Registration failed: ' + error.message);
-//         });
-// });
-
-// Registration for Teachers
-// document.querySelector('#teacher-form')?.addEventListener('submit', (e) => {
-//     e.preventDefault(); // Prevent form submission refresh
-
-//     // Retrieve user inputs
-//     const email = document.getElementById('teacher-email').value;
-//     const password = document.getElementById('teacher-password').value;
-
-//     // Register user with Firebase Authentication
-//     createUserWithEmailAndPassword(auth, email, password)
-//         .then((userCredential) => {
-//             // User is successfully registered
-//             const user = userCredential.user;
-//             alert('Teacher registration successful!');
-
-//             // Redirect or additional actions
-//             window.location.href = "login.html"; // Example redirection
-//         })
-//         .catch((error) => {
-//             // Handle registration errors
-//             console.error('Error registering teacher:', error);
-//             alert('Registration failed: ' + error.message);
-//         });
-// });
-
-
-
-
 
 
 
@@ -83,9 +30,9 @@ document.querySelector('#student-form')?.addEventListener('submit', async (e) =>
     // Retrieve user inputs
     const email = document.getElementById('student-email').value;
     const password = document.getElementById('student-password').value;
-    const name = document.getElementById('student-name').value; // Add a name field in your form
-    const department = document.getElementById('student-department').value; // Department field
-    const rollNumber = document.getElementById('student-roll').value; // Roll Number
+    const name = document.getElementById('student-name').value; 
+    const department = document.getElementById('student-department').value; 
+    const rollNumber = document.getElementById('student-roll').value; 
 
     try {
         // Register user with Firebase Authentication
@@ -103,10 +50,10 @@ document.querySelector('#student-form')?.addEventListener('submit', async (e) =>
             type: "Full-Time"
         });
 
-        // Redirect or additional actions
+        
         window.location.href = "login.html";
     } catch (error) {
-        // Handle registration errors
+        
         console.error('Error registering student:', error);
         alert('Registration failed: ' + error.message);
     }
@@ -114,14 +61,14 @@ document.querySelector('#student-form')?.addEventListener('submit', async (e) =>
 
 // Registration for Teachers
 document.querySelector('#teacher-form')?.addEventListener('submit', async (e) => {
-    e.preventDefault(); // Prevent form submission refresh
+    e.preventDefault(); 
 
     // Retrieve user inputs
     const email = document.getElementById('teacher-email').value;
     const password = document.getElementById('teacher-password').value;
-    const name = document.getElementById('teacher-name').value; // Name field in your form
-    const department = document.getElementById('teacher-department').value; // Department field
-    const employeeId = document.getElementById('teacher-id').value; // Employee ID field
+    const name = document.getElementById('teacher-name').value; 
+    const department = document.getElementById('teacher-department').value; 
+    const employeeId = document.getElementById('teacher-id').value; 
 
     try {
         // Register user with Firebase Authentication
@@ -131,7 +78,7 @@ document.querySelector('#teacher-form')?.addEventListener('submit', async (e) =>
 
         // Store additional data in Firestore
         await addDoc(collection(db, "teachers"), {
-            userId: user.uid, // Link Firestore data to the user
+            userId: user.uid, 
             name,
             email,
             department,
@@ -139,10 +86,10 @@ document.querySelector('#teacher-form')?.addEventListener('submit', async (e) =>
             type: "Full-Time"
         });
 
-        // Redirect or additional actions
+        
         window.location.href = "login.html";
     } catch (error) {
-        // Handle registration errors
+        
         console.error('Error registering teacher:', error);
         alert('Registration failed: ' + error.message);
     }

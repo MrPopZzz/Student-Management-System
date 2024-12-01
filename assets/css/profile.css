@@ -14,12 +14,12 @@ body {
     background-color: #f4f4f4;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body takes full height of the viewport */
+    min-height: 100vh; 
 }
 
 /* Main content area */
 .main-content {
-    flex: 1; /* This will ensure the content area takes up all available space */
+    flex: 1; 
 }
 
 /* Header and Navigation */
@@ -183,19 +183,19 @@ footer {
     color: #ffffff;
     text-align: center;
     padding: 20px 0;
-    margin-top: auto; /* This ensures the footer stays at the bottom */
+    margin-top: auto; 
     font-size: 0.9rem;
 }
 
 
-/* General Responsive Media Query */
+
 @media screen and (max-width: 1200px) {
-    /* Adjust layout for large tablets or smaller screens */
+    
     .container, .content, .wrapper {
         padding: 15px;
     }
 
-    /* Make navigation links stack on top of each other */
+    
     header nav {
         flex-direction: column;
         align-items: flex-start;
@@ -225,7 +225,7 @@ footer {
 }
 
 @media screen and (max-width: 830px) {
-    /* Adjust for smaller tablets and larger smartphones */
+    
     header nav {
         flex-direction: column;
         align-items: flex-start;

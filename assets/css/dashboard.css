@@ -14,12 +14,12 @@ body {
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    min-height: 100vh; /* Ensure the body spans the full viewport height */
+    min-height: 100vh; 
 }
 
 /* Main Content */
 main {
-    flex: 1; /* Allows the main content to grow and push the footer down */
+    flex: 1; 
 }
 
 /* Header and Navigation */
@@ -134,14 +134,14 @@ footer {
 }
 
 
-/* General Responsive Media Query */
+
 @media screen and (max-width: 1200px) {
-    /* Adjust layout for large tablets or smaller screens */
+    
     .container, .content, .wrapper {
         padding: 15px;
     }
 
-    /* Make navigation links stack on top of each other */
+    
     header nav {
         flex-direction: column;
         align-items: flex-start;
@@ -171,7 +171,7 @@ footer {
 }
 
 @media screen and (max-width: 830px) {
-    /* Adjust for smaller tablets and larger smartphones */
+    
     header nav {
         flex-direction: column;
         align-items: flex-start;

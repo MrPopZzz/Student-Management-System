@@ -86,7 +86,7 @@
                 <td>Cyber Security</td>
                 <td>chatterjeedebdatta@gmail.com</td>
               </tr>
-              <!-- More teachers can be added here -->
+              
             </tbody>
           </table>
         </div>
@@ -104,11 +104,11 @@
         getDocs,
         collection,
       } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-      import { db } from "./auth.js"; // Ensure you import db from auth.js
+      import { db } from "./auth.js"; 
 
       async function getTeachers() {
         try {
-          const teachersRef = collection(db, "teachers"); // Reference to the 'teachers' collection
+          const teachersRef = collection(db, "teachers"); 
           const querySnapshot = await getDocs(teachersRef);
 
           querySnapshot.forEach((doc) => {
@@ -132,7 +132,7 @@
         }
       }
 
-      // Call the function to populate the teacher list when the page loads
+      
       getTeachers();
     </script>
   </body>

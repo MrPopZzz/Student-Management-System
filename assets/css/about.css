@@ -74,22 +74,22 @@ header nav {
     background-color: #ffffff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    border-radius: 8px; /* Slightly rounded corners */
-    padding: 5px 0; /* Space between items and container */
+    border-radius: 8px; 
+    padding: 5px 0; 
 }
 
 /* Hover functionality for dropdown-nav */
 .dropdown-nav:hover .dropdown {
     display: block;
 }
-/* Removing border between dropdown items */
+
 .dropdown a {
     display: block;
     padding: 10px 15px;
     color: #333;
     background-color: #ffffff;
     text-decoration: none;
-    border: none; /* No borders between items */
+    border: none; 
     transition: background-color 0.3s;
 }
 
@@ -170,11 +170,7 @@ header nav {
     border: 2px solid #e0e6ed;
 }
 
-/* Hover Effect for a modern touch */
-/* .introduction:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15), 0 8px 8px rgba(0, 0, 0, 0.1);
-} */
+
 
 /* Unique title style */
 .introduction h2 {
@@ -227,7 +223,7 @@ header nav {
     gap: 30px;
 }
 
-/* Mission and Values - Container Styling */
+
 .mission, .values {
     background: linear-gradient(to bottom right, #f9fafb, #ffffff);
     padding: 30px;
@@ -238,11 +234,7 @@ header nav {
     text-align: center;
 }
 
-/* Hover Effect for individual containers */
-/* .mission:hover, .values:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
-} */
+
 
 /* Mission and Values Titles */
 .mission h2, .values h2 {
@@ -310,14 +302,14 @@ footer {
     font-size: 0.9rem;
 }
 
-/* General Responsive Media Query */
+
 @media screen and (max-width: 1200px) {
-    /* Adjust layout for large tablets or smaller screens */
+    
     .container, .content, .wrapper {
         padding: 15px;
     }
 
-    /* Make navigation links stack on top of each other */
+    
     header nav {
         flex-direction: column;
         align-items: flex-start;
@@ -332,7 +324,7 @@ footer {
         margin: 10px 0;
     }
 
-    /* Adjust font sizes */
+    
     .hero h2 {
         font-size: 2.5rem;
     }
@@ -347,7 +339,7 @@ footer {
 }
 
 @media screen and (max-width: 830px) {
-    /* Adjust for smaller tablets and larger smartphones */
+    
     header nav {
         flex-direction: column;
         align-items: flex-start;
@@ -377,7 +369,7 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
-    /* Mobile devices */
+    
     body {
         font-size: 14px;
     }

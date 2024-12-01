@@ -22,7 +22,7 @@ const db = getFirestore(app); // Initialize Firestore
 
 onAuthStateChanged(auth, (user) => {
     if (user) {
-        console.log('User logged in:', user); // Log user details
+        console.log('User logged in:', user); 
         displayProfile(user);
     } else {
         console.log('No user logged in');
@@ -31,22 +31,22 @@ onAuthStateChanged(auth, (user) => {
 });
 
 function displayProfile(user) {
-    // Get reference to the Firestore collection based on the user's email (simple check)
+    
     const collectionName = user.email.includes("student") ? "students" : "teachers"; 
 
-    // Get a reference to the Firestore collection
+    
     const userRef = collection(db, collectionName);
 
-    // Create a query to filter documents where 'userId' equals the user's UID
+    
     const userQuery = query(userRef, where("userId", "==", user.uid));
 
-    // Fetch the user data using the query
+    
     getDocs(userQuery).then((querySnapshot) => {
         if (!querySnapshot.empty) {
-            const userData = querySnapshot.docs[0].data();  // Get the first matched document
+            const userData = querySnapshot.docs[0].data();  
             console.log('User data:', userData);
 
-            // Update the profile details in the HTML
+            
             document.getElementById("user-name").textContent = userData.name;
             document.getElementById("user-email").textContent = userData.email;
             document.getElementById("user-id").textContent = userData.rollNumber || userData.employeeId;

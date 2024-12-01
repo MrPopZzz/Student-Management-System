@@ -90,21 +90,21 @@ document.querySelector('.login-form')?.addEventListener('submit', (e) => {
   // Sign in user with Firebase Authentication
   signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
-          // User is successfully logged in
+          
           const user = userCredential.user;
           alert('Login successful!');
 
-          // Redirect or perform any additional actions
-          window.location.href = "home.html"; // Example redirection
+          
+          window.location.href = "home.html"; 
       })
       .catch((error) => {
-          // Handle login errors
+          
           console.error('Error logging in:', error);
           alert('Login failed: ' + error.message);
       });
 });
 
-// Check Authentication Status (Optional)
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
       // User is signed in

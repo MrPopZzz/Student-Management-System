@@ -36,7 +36,7 @@ header nav {
 
 .logo img {
     width: 100%;
-    max-width: 80px; /* Responsive max width for logo */
+    max-width: 80px; 
     height: auto;
     object-fit: contain;
 }
@@ -82,8 +82,8 @@ header nav {
     background-color: #ffffff;
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
     z-index: 1;
-    border-radius: 8px; /* Slightly rounded corners */
-    padding: 5px 0; /* Space between items and container */
+    border-radius: 8px;
+    padding: 5px 0; 
 }
 
 /* Dropdown item links */
@@ -93,7 +93,7 @@ header nav {
     color: #333;
     background-color: #ffffff;
     text-decoration: none;
-    border: none; /* No borders between items */
+    border: none; 
     transition: background-color 0.3s;
 }
 
@@ -152,7 +152,7 @@ header nav {
 
 .input-group input:focus {
     border-color: #3498db;
-    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8); /* Add a subtle focus effect */
+    box-shadow: 0 0 5px rgba(52, 152, 219, 0.8); 
 }
 
 .btn {
@@ -196,14 +196,14 @@ footer {
 }
 
 
-/* General Responsive Media Query */
+
 @media screen and (max-width: 1200px) {
-    /* Adjust layout for large tablets or smaller screens */
+    
     .container, .content, .wrapper {
         padding: 15px;
     }
 
-    /* Make navigation links stack on top of each other */
+    
     header nav {
         flex-direction: column;
         align-items: flex-start;
@@ -233,7 +233,7 @@ footer {
 }
 
 @media screen and (max-width: 830px) {
-    /* Adjust for smaller tablets and larger smartphones */
+    
     header nav {
         flex-direction: column;
         align-items: flex-start;

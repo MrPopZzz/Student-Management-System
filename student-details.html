@@ -89,7 +89,7 @@
                 <td>Electrical Engineering</td>
                 <td>riyachatterjee@gmail.com</td>
               </tr>
-              <!-- More students can be added here -->
+              
             </tbody>
           </table>
         </div>
@@ -107,14 +107,14 @@
         getDocs,
         collection,
       } from "https://www.gstatic.com/firebasejs/11.0.2/firebase-firestore.js";
-      import { db } from "./auth.js"; // Ensure you export db properly from auth.js
+      import { db } from "./auth.js"; 
 
       async function getStudents() {
         const studentTable = document.querySelector("#student-table");
 
         try {
-          const studentsRef = collection(db, "students"); // Reference to students collection
-          const querySnapshot = await getDocs(studentsRef); // Fetch documents
+          const studentsRef = collection(db, "students"); 
+          const querySnapshot = await getDocs(studentsRef); 
 
           if (querySnapshot.empty) {
             studentTable.innerHTML = `<tr><td colspan="7">No students found</td></tr>`;
@@ -144,7 +144,7 @@
         }
       }
 
-      // Call the function on page load
+      
       getStudents();
     </script>
   </body>
